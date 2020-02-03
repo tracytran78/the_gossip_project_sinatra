@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Editer le gossip n°<%= id %></title>
+  </head>
+  <body>
+    <% if (1..Gossip.all.length).include? id %>
+      <h1>Page d'edition de potin</h1>
+      <p>Voici la page d'edition du potin n°<%=id%></p>
+      <form action='/gossips/<%= id %>/edit/' method='POST'>
+      Saisi ici ton nom :  <input type='text' name='gossip_author'/><br/>
+      Balance le nouveau potin n°<%= id %>: <input type='text' name='gossip_content'/><br/>
+      <input type='submit'/>
+    </form>
+    <% else %>
+      <h1>Le Potin n°<%=id%> n'existe pas.</h1>
+    <% end %>
+    <a href="/">Lien pour revenir à la page des potins</a>
+  </body>
+</html>

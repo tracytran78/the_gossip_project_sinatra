@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title> Gossip n°<%=id%></title>
+  </head>
+  <body>
+    <% if (1..Gossip.all.length).include? id %>
+      <h1>Page Potin</h1>
+      <p>Voici la page du potin n°<%=id%></p>
+      <p>Son auteur : <%= gossip.author %></p>
+      <p>Le contenu du potin : <%= gossip.content %></p><br>
+      <a href="/gossips/<%= id %>/edit/">Editer le potin</a><br>
+      <% if gossip.comments.split(';').length > 1 %>
+        <h2>Commentaires :</h2>
+      <% end %>
+      <% gossip.comments.split(';').each do |com| %>
+        <p><%= com %></p>
+      <% end %>
+      <form action='/gossips/<%= id %>/'/ method='POST'>
+      Ajouter un commentaire : <input type='text' name='comment'/><br/>
+      <input type='submit'/>
+    </form>
+    <% else %>
+      <h1>Le Potin n°<%=id%> n'existe pas.</h1>
+    <% end %>
+    <a href="/">Lien pour revenir à la page des potins</a>
+  </body>
+</html>
