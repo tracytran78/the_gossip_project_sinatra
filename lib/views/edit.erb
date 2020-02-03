@@ -3,7 +3,12 @@
     <title>Editer le restaurant n°<%= id %></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
-  <body>
+  <style>
+    body{
+      background-color: white !important;
+    }
+  </style>
+  <body class="jumbotron">
     <div class="container text-center">
       <% if (1..Gossip.all.length).include? id %>
         <h1 class="mb-5">Page d'edition du restaurant</h1>
