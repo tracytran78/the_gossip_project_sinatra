@@ -18,5 +18,7 @@ C'est le fichier qui contient la classe gossip qui fait toutes les actions liée
 C'est la database en csv
 #### views
 Ce dossier contient les differentes views
+## Jusqu'ou je suis allé
+Jusqu'à la fin et jusqu'à rajouter une touche de css pour que ca soit mignon
 ## Auteur
 [DevPomeis](https://github.com/DevPomeis) Théo Pomies sur Slack
