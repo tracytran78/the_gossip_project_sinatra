@@ -9,7 +9,7 @@
 ## Contenu
 ### config.ru
 C'est un fichier de configuration de Rack, qui permet, lancé avec Shotgun, de faire tourner le serveur et de tester des changements en direct
-###lib
+### lib
 #### controller.rb
 C'est tout simplement notre controller qui va gérer nos routes et les méthodes GET / POST de l'app
 #### gossip.rb
