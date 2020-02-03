@@ -1,14 +1,19 @@
 <html>
   <head>
-    <title>Créer un potin</title>
+    <title>Ajouter un restaurant</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Crée un potin !</h1>
-    <p>Balance ton potin via le formulaire ci-dessous</p>
-    <form action='/gossips/new/' method='POST'>
-      Saisi ici ton nom :  <input type='text' name='gossip_author'  pattern=".{1,}" required><br/>
-      Balance ton potin : <input type='text' name='gossip_content' pattern=".{1,}" required/><br/>
-      <input type='submit'/>
-    </form>
+    <div class="container text-center">
+      <h1 class="mb-5">Ajouter votre restaurant</h1>
+      <p>Presentez votre restaurant et son chef via le formulaire ci-dessous</p>
+      <form action='/gossips/new/' method='POST'>
+        Saisissez ici le nom du chef :<br>
+        <input type='text' name='gossip_author'  pattern=".{1,}" required/><br/>
+        Et le nom du restaurant : <br>
+        <input type='text' name='gossip_content' pattern=".{1,}" required/><br/>
+        <input class="btn btn-primary mt-5" type='submit'/>
+      </form>
+    </div>
   </body>
 </html>

@@ -1,27 +1,30 @@
 <html>
   <head>
-    <title> Gossip n°<%=id%></title>
+    <title>Restaurant n°<%=id%></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
-    <% if (1..Gossip.all.length).include? id %>
-      <h1>Page Potin</h1>
-      <p>Voici la page du potin n°<%=id%></p>
-      <p>Son auteur : <%= gossip.author %></p>
-      <p>Le contenu du potin : <%= gossip.content %></p><br>
-      <a href="/gossips/<%= id %>/edit/">Editer le potin</a><br>
-      <% if gossip.comments.split(';').length > 1 %>
-        <h2>Commentaires :</h2>
+    <div class="container text-center">
+      <% if (1..Gossip.all.length).include? id %>
+        <h1 class="mb-5">Page Restaurant</h1>
+        <p>Voici la page du restaurant n°<%=id%></p>
+        <p>Son chef : <%= gossip.author %></p>
+        <p>Le restaurant : <%= gossip.content %></p><br>
+        <a class="btn btn-primary mb-5"href="/gossips/<%= id %>/edit/">Editer le restaurant</a><br>
+        <% if gossip.comments.split(';').length > 1 %>
+          <h2 class="mb-5">Avis :</h2>
+        <% end %>
+        <% gossip.comments.split(';').each do |com| %>
+          <p><%= '"'+com+'"' unless com == "" %></p>
+        <% end %>
+        <form action='/gossips/<%= id %>/'/ method='POST'>
+          Ajouter un avis : <br><input type='text' name='comment'/><br/>
+          <input class="btn btn-light mt-3 mb-3" type='submit'/>
+        </form>
+      <% else %>
+        <h1>Le Restaurant n°<%=id%> n'existe pas.</h1>
       <% end %>
-      <% gossip.comments.split(';').each do |com| %>
-        <p><%= com %></p>
-      <% end %>
-      <form action='/gossips/<%= id %>/'/ method='POST'>
-      Ajouter un commentaire : <input type='text' name='comment'/><br/>
-      <input type='submit'/>
-    </form>
-    <% else %>
-      <h1>Le Potin n°<%=id%> n'existe pas.</h1>
-    <% end %>
-    <a href="/">Lien pour revenir à la page des potins</a>
+      <a class="btn btn-primary mb-5"href="/">Lien pour revenir à la page des restaurants</a>
+    </div>
   </body>
 </html>
